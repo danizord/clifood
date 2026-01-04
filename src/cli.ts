@@ -1,4 +1,4 @@
-#!/usr/bin/env bun
+#!/usr/bin/env node
 import { Command } from "commander";
 import { loadConfig, saveConfig, parseConfigValue, configPath } from "./lib/config.js";
 import { openSession } from "./lib/browser.js";

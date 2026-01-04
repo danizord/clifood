@@ -8,7 +8,7 @@
   },
   "scripts": {
     "cli": "bun src/cli.ts",
-    "build": "bun build src/cli.ts --outdir dist --target node",
+    "build": "bun build src/cli.ts --outdir dist --target node --external playwright --external playwright-core",
     "prepare": "bun run build",
     "typecheck": "bunx tsc --noEmit",
     "test": "bun test"
