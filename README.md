@@ -56,6 +56,8 @@ Shortcut:
 bun src/cli.ts restaurants --query "a" --exclude-defaults --limit 10
 ```
 
+Defaults cover pizza, burgers, and sweets (including lanches, açaí, sorvetes, bolos).
+
 Top restaurants (discovery feed, no search term):
 
 ```bash
