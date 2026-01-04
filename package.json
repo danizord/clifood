@@ -1,0 +1,24 @@
+{
+  "name": "clifood",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "clifood": "src/cli.ts"
+  },
+  "scripts": {
+    "cli": "bun src/cli.ts",
+    "build": "bun build src/cli.ts --outdir dist --target bun",
+    "typecheck": "bunx tsc --noEmit",
+    "test": "bun test"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "playwright": "^1.49.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.4",
+    "typescript": "^5.7.3"
+  }
+}
