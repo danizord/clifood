@@ -1,17 +1,24 @@
 {
   "name": "clifood",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "type": "module",
   "bin": {
-    "clifood": "src/cli.ts"
+    "clifood": "dist/cli.js"
   },
   "scripts": {
     "cli": "bun src/cli.ts",
-    "build": "bun build src/cli.ts --outdir dist --target bun",
+    "build": "bun build src/cli.ts --outdir dist --target node",
+    "prepare": "bun run build",
     "typecheck": "bunx tsc --noEmit",
     "test": "bun test"
   },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
   "dependencies": {
     "commander": "^12.1.0",
     "playwright": "^1.49.0",

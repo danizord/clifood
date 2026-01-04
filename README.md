@@ -20,6 +20,23 @@ bunx playwright install chromium
 bun src/cli.ts restaurants --query "pizza" --limit 5 --json
 ```
 
+## Global install (local)
+
+From the repo root:
+
+```bash
+bun install
+bun run build
+
+# Option 1: Bun link (recommended for local dev)
+bun link
+clifood restaurants --query "pizza" --limit 5
+
+# Option 2: npm global install from local path
+npm install -g .
+clifood restaurants --query "pizza" --limit 5
+```
+
 ## Use your existing logged-in browser (recommended)
 
 Start Chrome with remote debugging enabled, then point the CLI to it:
@@ -29,8 +46,9 @@ Start Chrome with remote debugging enabled, then point the CLI to it:
   --remote-debugging-port=9222 \
   --user-data-dir="$HOME/.clifood/chrome-profile"
 
-# Then run
+# Then run (direct or global)
 bun src/cli.ts restaurants --query "japonesa" --cdp-url http://127.0.0.1:9222
+clifood restaurants --query "japonesa" --cdp-url http://127.0.0.1:9222
 ```
 
 This keeps your existing iFood login and address selection. All API calls are executed from your authenticated browser context to avoid bot blocks.
@@ -40,7 +58,7 @@ This keeps your existing iFood login and address selection. All API calls are ex
 ### Open iFood (manual setup)
 
 ```bash
-bun src/cli.ts open --wait
+clifood open --wait
 ```
 
 Use this to log in or set your delivery address in the connected browser profile.
@@ -48,19 +66,19 @@ Use this to log in or set your delivery address in the connected browser profile
 ### Search restaurants
 
 ```bash
-bun src/cli.ts restaurants --query "sushi" --limit 10
+clifood restaurants --query "sushi" --limit 10
 ```
 
 Exclude categories or names:
 
 ```bash
-bun src/cli.ts restaurants --query "a" --exclude pizza --exclude hamburguer --exclude doces --limit 10
+clifood restaurants --query "a" --exclude pizza --exclude hamburguer --exclude doces --limit 10
 ```
 
 Shortcut:
 
 ```bash
-bun src/cli.ts restaurants --query "a" --exclude-defaults --limit 10
+clifood restaurants --query "a" --exclude-defaults --limit 10
 ```
 
 Defaults cover pizza, burgers, and sweets (including lanches, açaí, sorvetes, bolos).
@@ -68,13 +86,13 @@ Defaults cover pizza, burgers, and sweets (including lanches, açaí, sorvetes, 
 Top restaurants (discovery feed, no search term):
 
 ```bash
-bun src/cli.ts restaurants --top --exclude-defaults --limit 10
+clifood restaurants --top --exclude-defaults --limit 10
 ```
 
 ### Search items in a restaurant
 
 ```bash
-bun src/cli.ts items --restaurant "Restaurante X" --query "temaki" --limit 10
+clifood items --restaurant "Restaurante X" --query "temaki" --limit 10
 ```
 
 You can also pass a full iFood restaurant URL with `--restaurant`.
@@ -82,7 +100,7 @@ You can also pass a full iFood restaurant URL with `--restaurant`.
 ### Place an order
 
 ```bash
-bun src/cli.ts order \
+clifood order \
   --restaurant "Restaurante X" \
   --item "Temaki de salmão:2" \
   --item "Guioza" \
