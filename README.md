@@ -37,6 +37,15 @@ npm install -g .
 clifood restaurants --query "pizza" --limit 5
 ```
 
+## Global install (GitHub via Bun)
+
+Bun can install directly from GitHub:
+
+```bash
+bun add -g github:danizord/clifood
+clifood restaurants --query "pizza" --limit 5
+```
+
 ## Use your existing logged-in browser (recommended)
 
 Start Chrome with remote debugging enabled, then point the CLI to it:
