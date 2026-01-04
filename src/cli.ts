@@ -278,7 +278,7 @@ program
       }
       const catalog = await getCatalog(ctx, restaurant.id, { page: session.page, url: restaurant.url });
       const cartItems = buildCartItems(catalog, items);
-      const cart = await createCart(ctx, { id: restaurant.id, name: restaurant.name }, cartItems, session.page);
+      const cart = await createCart(ctx, { id: restaurant.id, name: restaurant.name }, cartItems);
 
       await openCart(session.page);
       await openCheckout(session.page);
