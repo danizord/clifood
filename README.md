@@ -1,6 +1,11 @@
 # clifood
 
-API-first CLI for iFood. It uses your authenticated browser session to call iFood’s internal APIs directly (search, catalog, cart, discovery) and only opens pages for login/address setup and checkout review. No UI scraping is required.
+API-first CLI for iFood built for AI agents. It uses your authenticated browser session to call iFood’s internal APIs directly (search, catalog, cart, discovery) and only opens pages for login/address setup and checkout review. No UI scraping is required.
+
+What this is for:
+- Find restaurants and items quickly
+- Build carts and prep orders
+- Hand off to checkout for a human confirmation (no auto-submit by default)
 
 ## Quick start
 

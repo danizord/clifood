@@ -2,13 +2,13 @@
 
 ## Auth + headers
 
-Use `getApiContext(page)` from `src/ifood/api.ts` to capture headers and address/account data. It listens for any iFood API request after loading `/restaurantes` and extracts required headers.
+Use `getApiContext(page)` from `src/ifood/api.ts` to capture headers and address/account data. It reads Redux state (account + address) and captures required headers from a live API request.
 
 ## Endpoints used
 
-- Discovery feed: `GET https://cw-marketplace.ifood.com.br/v2/bm/home?alias=HOME_FOOD_DELIVERY&latitude=...&longitude=...`
-- Category page: `GET https://cw-marketplace.ifood.com.br/v1/bm/page/{categoryId}?latitude=...&longitude=...`
-- Search: `GET https://cw-marketplace.ifood.com.br/v2/cardstack/search/results?alias=SEARCH_RESULTS_MERCHANT_TAB_GLOBAL&term=...`
+- Discovery feed: `POST https://cw-marketplace.ifood.com.br/v2/bm/home?alias=HOME_MULTICATEGORY&latitude=...&longitude=...&channel=IFOOD&size=...`
+- Category page: `POST https://cw-marketplace.ifood.com.br/v1/bm/page/{categoryId}?latitude=...&longitude=...&channel=IFOOD`
+- Search: `POST https://cw-marketplace.ifood.com.br/v2/cardstack/search/results?alias=SEARCH_RESULTS_MERCHANT_TAB_GLOBAL&term=...&latitude=...&longitude=...&channel=IFOOD&size=...`
 - Merchant catalog: `GET https://cw-marketplace.ifood.com.br/v1/bm/merchants/{merchantId}/catalog?latitude=...&longitude=...`
 - Cart creation: `POST https://cw-marketplace.ifood.com.br/v1/carts`
 
